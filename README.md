@@ -3,7 +3,7 @@ This is a web-page, designed for a local furniture store. In order to design thi
 The web page should be fully responsive and open with any browser.
 
 ## How to load the page
-You may download the project and open index.html file with Chrome, or play online: at https://usjulija.github.io/CosmicJumper/
+You may download the project and open index.html file with Chrome, or play online: at https://usjulija.github.io/vuduFurniture/
 
 ## Preview
 ![Page preview](https://image.ibb.co/fhdUyJ/Untitled.jpg)
