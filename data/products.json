@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "image": "./images/small/1.jpg",
+    "imageBig": "./images/1(bg).jpg",
+    "scheme": "./images/scheme/1(scheme).jpg",
+    "type": "loft",
+    "name": "komoda",
+    "price": "Dėl kainų teiraukitės rašydami el.paštu.",
+    "url": "./product.html?id={1}",
+    "country": "Ispanija",
+    "description": "Aukštos kokybės ir išskirtinio dizaino komoda."
+  }, {
+    "id": 2,
+    "image": "./images/small/2.jpg",
+    "imageBig": "./images/2(bg).jpg",
+    "scheme": "./images/scheme/2(scheme).jpg",
+    "type":"decor",
+    "name": "veidrodis",
+    "price": "Dėl kainų teiraukitės rašydami el.paštu.",
+    "url": "./product.html?id={2}",
+    "country": "Ispanija",
+    "description": "Išskirtinio dizaino veidrodis."
+  }, {
+    "id": 3,
+    "image": "./images/small/3.jpg",
+    "imageBig": "./images/3(bg).jpg",
+    "scheme": "./images/scheme/3(scheme).jpg",
+    "type":"loft",
+    "name": "komoda",
+    "price": "Dėl kainų teiraukitės rašydami el.paštu.",
+    "url": "./product.html?id={3}",
+    "country": "Ispanija",
+    "description": "Aukštos kokybės ir išskirtinio dizaino komoda."
+  }, {
+    "id": 4,
+    "image": "./images/small/4.jpg",
+    "imageBig": "./images/4(bg).jpg",
+    "scheme": "./images/scheme/4(scheme).jpg",
+    "type":"loft",
+    "name": "komoda",
+    "price": "Dėl kainų teiraukitės rašydami el.paštu.",
+    "url": "./product.html?id={4}",
+    "country": "Ispanija",
+    "description": "Aukštos kokybės ir išskirtinio dizaino komoda."
+  }, {
+    "id": 5,
+    "image": "./images/small/5.jpg",
+    "imageBig": "./images/5(bg).jpg",
+    "scheme": "./images/scheme/5(scheme).jpg",
+    "type":"loft",
+    "name": "komoda",
+    "price": "Dėl kainų teiraukitės rašydami el.paštu.",
+    "url": "./product.html?id={5}",
+    "country": "Ispanija",
+    "description": "Aukštos kokybės ir išskirtinio dizaino komoda."
+  }, {
+    "id": 6,
+    "image": "./images/small/6.jpg",
+    "imageBig": "./images/6(bg).jpg",
+    "scheme": "./images/scheme/6(scheme).jpg",
+    "type":"scandinavian",
+    "name": "komoda",
+    "price": "Dėl kainų teiraukitės rašydami el.paštu.",
+    "url": "./product.html?id={6}",
+    "country": "Ispanija",
+    "description": "Aukštos kokybės ir išskirtinio dizaino komoda."
+  }, {
+    "id": 7,
+    "image": "./images/small/7.jpg",
+    "imageBig": "./images/7(bg).jpg",
+    "scheme": "./images/scheme/7(scheme).jpg",
+    "type":"loft",
+    "name": "komoda",
+    "price": "Dėl kainų teiraukitės rašydami el.paštu.",
+    "url": "./product.html?id={7}",
+    "country": "Ispanija",
+    "description": "Aukštos kokybės ir išskirtinio dizaino komoda."
+  }, {
+    "id": 8,
+    "image": "./images/small/8.jpg",
+    "imageBig": "./images/8(bg).jpg",
+    "scheme": "./images/scheme/8(scheme).jpg",
+    "type":"loft",
+    "name": "komoda",
+    "price": "Dėl kainų teiraukitės rašydami el.paštu.",
+    "url": "./product.html?id={8}",
+    "country": "Ispanija",
+    "description": "Aukštos kokybės ir išskirtinio dizaino komoda."
+  }
+]
