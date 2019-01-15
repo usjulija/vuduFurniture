@@ -22,19 +22,17 @@ function createCard() {
     card.className = "cardContainer";
     card.innerHTML = `
       <h2>${cardData["0"].name}</h2>
-      <div class="card-images">
-        <img id="myImg" src='${cardData["0"].image}' alt='${cardData["0"].name}' class="product-image-small">
-        <img src='${cardData["0"].scheme}' alt='${cardData["0"].name} scheme' class="product-scheme">
-      </div>
+      <img id="myImg" src='${cardData["0"].image}' alt='${cardData["0"].name}' class="product-image-small">
+      <img src='${cardData["0"].scheme}' alt='${cardData["0"].name} scheme' class="product-scheme">
       <div class="card-data">
         <p>${cardData["0"].description}</p>
         <p class="country">Kilmės šalis: ${cardData["0"].country}.</p>
         <p class="price">${cardData["0"].price}</p>
-        <a href="mailto:airuska@yahoo.com?Subject=Contact%20form"
-          target="_top"
-          class="card-email"
-          rel="noopener noreferrer">Siųsti el.laišką</a>
       </div>
+      <a href="mailto:airuska@yahoo.com?Subject=Contact%20form"
+      target="_top"
+      class="card-email"
+      rel="noopener noreferrer">Siųsti el.laišką</a>
       <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01" src='${cardData["0"].imageBig}' alt='${cardData["0"].name}'>

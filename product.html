@@ -6,19 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no">
   <link href="css/styles.css" rel="stylesheet">
-  <title>Document</title>
+  <link rel="icon" href="https://i.ibb.co/ph38VHM/vizitine-1115.png" type="image/png" sizes="16x16">
+  <title>VUDU furniture</title>
 </head>
 <body>
   <!-- NAVIGATION -->
   <nav class="topnav" id="nav">
     <div class="left-align">
       <img src="./images/vudu-logo-small.svg" alt="vudu furniture logo">
-      <a href="/" id="active">VŪDU furniture</a>
+      <a href="/vuduFurniture" id="active">VŪDU furniture</a>
     </div>
     <div class="right-align">
-      <a href="/#about">Apie mus</a>
-      <a href="/#shop">Parduotuvė</a>
-      <a href="/#contact">Kontaktai</a>
+      <a href="/vuduFurniture/#about">Apie mus</a>
+      <a href="/vuduFurniture/#shop">Parduotuvė</a>
+      <a href="/vuduFurniture/#contact">Kontaktai</a>
       <a href="tel:+37069877618" id="phone">+370 698 77618</a>
       <a href="javascript:void(0);" class="icon" onclick="responsiveNav()">
         <div class="hamburger">
@@ -40,5 +41,9 @@
     </p>
   </footer>
   <script src="js/product.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+  </script>
 </body>
 </html>
