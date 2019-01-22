@@ -29,7 +29,7 @@ function createCard() {
         <p class="country">Kilmės šalis: ${cardData["0"].country}.</p>
         <p class="price">${cardData["0"].price}</p>
       </div>
-      <a href="mailto:airuska@yahoo.com?Subject=Contact%20form"
+      <a href="mailto:email@email.com?Subject=Contact%20form"
       target="_top"
       class="card-email"
       rel="noopener noreferrer">Siųsti el.laišką</a>
