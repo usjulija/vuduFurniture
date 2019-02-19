@@ -39,7 +39,7 @@ body {
   @include flexbox;
   @include align-items(center);
   img {
-    height: 85px;
+    height: 75px;
   }
 }
 
@@ -143,29 +143,19 @@ body {
   }
   h1 {
     font-family: 'Comfortaa', cursive;
-    font-size: 30px;
+    font-size: 25px;
     margin: 20px 10px;
     letter-spacing: 3px;
     text-align: center;
     @media screen and (min-width: 600px) {
-      font-size: 40px;
-    }
-    @media screen and (min-width: 850px) {
-      font-size: 50px;
-      margin: 40px 10px 10px 10px;
+      font-size: 30px;
     }
   }
   p {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-align: center;
-    font-size: 15px;
-    @media screen and (min-width: 600px) {
-      font-size: 20px;
-    }
-    @media screen and (min-width: 850px) {
-      font-size: 25px;
-    }
+    font-size: 17px;
   }
   a {
     margin: 5px;
@@ -177,8 +167,10 @@ body {
     @include align-items(center);
     @include justify-content(center);
     @include transition(all 0.3s linear);
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #e58c87;
+      outline: 0;
     }
   }
 }
@@ -380,21 +372,23 @@ body {
   @include align-items(center);
   @include justify-content(center);
   @include flex-direction(column);
-  text-align: center;
   h2 {
+    text-align: center;
     font-family: 'Comfortaa', cursive;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin: 25px;
-    @media screen and (min-width: 850px) {
-      margin: 55px 25px 25px 25px;
-    }
+    margin: 65px 25px 25px 25px;
+
   }
-  p {
+  ul {
     text-align: justify;
-    max-width: 550px;
-    font-size: 22px;
-    padding: 10px;
+    max-width: 705px;
+    padding: 0 25px;
+    margin: 15px;
+    list-style-image: url(../images/checked.png);
+    li {
+      margin: 5px;
+    }
   }
 }
 
@@ -426,51 +420,46 @@ body {
  margin: 7.5px 15px;
 }
 
+.message {
+  margin-top: 25px;
+}
+
 .panel {
-  flex: 100%;
+  text-decoration: none;
+  opacity: 0.85;
+  color: $blue;
   max-width: 250px;
-  height: 250px;
+  min-width: 250px;
+  height: 280px;
   display: none;
-  align-items: center;
-  justify-content: center;
+  @include align-items(flex-end);
+  @include justify-content(center);
   overflow: hidden;
-  background-position: center;
-  background-size: cover;
-  box-shadow: 3px 4px 2px rgba(0,0,0,0.1);
+  background-size: contain;
+  background-repeat: no-repeat;
   @include transition(all 0.3s linear);
-  @media screen and (min-width: 450px) {
-    flex: 40%;
+  box-shadow: 3px 4px 2px rgba(0,0,0,0.1);
+  border: 1px solid white;
+  &:hover,
+  &:focus {
+    opacity: 1;
+    box-shadow: 4px 5px 3px rgba(0,0,0,0.35);
+    color: $red;
+    border: 1px solid #dedede;
+    outline: 0;
   }
   @media screen and (min-width: 700px) {
-    max-width: 300px;
-    height: 300px;
-  }
-  @media screen and (min-width: 900px) {
-    flex: 20%;
-  }
-  .title {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s;
-    z-index: 10;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    background: $blue;
-    padding: 15px;
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
+    min-width: 300px;
+    height: 330px;
   }
 }
 
 .show {
-  display: flex;
+  @include flexbox;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .btn {
@@ -498,8 +487,8 @@ body {
   padding: 30px;
   line-height: 35px;
   text-align: justify;
-  max-width: 550px;
-  margin: 100px auto;
+  max-width: 600px;
+  margin: 40px auto;
 }
 
 #contact {
@@ -548,11 +537,22 @@ body {
     @include flexbox;
     @include align-items(center);
     @include justify-content(center);
-    a {
+    .button {
       text-decoration: none;
+      .icon-link {
+        @include transition(all 0.3s linear);
+      }
+      &:hover .icon-link,
+      &:focus .icon-link,
+      &:focus {
+        fill: $red;
+        outline: 0;
+      }
     }
   }
 }
+
+
 .emial-button {
   @include transition(all 0.3s linear);
   text-transform: uppercase;
@@ -619,9 +619,10 @@ footer {
 .modal-content {
   margin: auto;
   display: block;
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
   @media screen and (min-width: 900px) {
-    width: 80%;
+    max-width: 80%;
   }
 }
 
@@ -648,6 +649,8 @@ footer {
   top: 15px;
   right: 35px;
   color: #f1f1f1;
+  background: transparent;
+  border: 0;
   font-size: 40px;
   font-weight: bold;
   @include transition(all 0.3s linear);
@@ -655,18 +658,20 @@ footer {
 
 .close:hover,
 .close:focus {
-  color: #bbb;
+  color: $red;
   text-decoration: none;
   cursor: pointer;
+  outline: 0;
 }
 
 #productCard {
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
+  background: #f2f2f2;
   @include flexbox;
   @include align-items(center);
   @include justify-content(center);
   @media screen and (min-width: 450px) {
-    background: #f2f2f2;
+    background: #dbdbdb;
   }
 }
 
@@ -685,21 +690,16 @@ footer {
   @include justify-content(center);
   @include flex-direction(row);
   @include flex-flow(wrap);
-  max-width: 900px;
   width: 100%;
   margin: 120px auto 50px auto;
-  background: white;
+  background: #f2f2f2;
   @media screen and (min-width: 450px) {
     border-radius: 10px;
     box-shadow: 3px 4px 2px rgba(0,0,0,0.1);
     width: 350px;
   }
-  @media screen and (min-width: 650px) {
-    width: 450px;
-  }
   @media screen and (min-width: 850px) {
-    width: 750px;
-    height: 383px;
+    width: 800px;
   }
   h2 {
     width: 100%;
@@ -709,25 +709,66 @@ footer {
     letter-spacing: 3px;
     text-transform: uppercase;
     margin: 20px;
+    @media screen and (min-width: 850px) {
+      font-size: 23px;
+      margin: 10px;
+    }
   }
   .product-image-small {
     width: 100%;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
+    background: white;
+    cursor: pointer;
     @media screen and (min-width: 850px) {
-      margin-bottom: 0;
-      width: 300px;
+      padding-bottom: 0;
+      width: 400px;
     }
   }
   .product-scheme {
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 10px;
+    background: white;
+    padding: 0 40px 20px 40px;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
     @media screen and (min-width: 650px) {
-      width: 40%;
+      padding: 0 70px 20px 70px;
     }
     @media screen and (min-width: 850px) {
-      padding-left: 20px;
-      width: 200px;
+      padding: 0 0 20px 0;
+      width: 400px;
+      height: 400px;
+    }
+    img {
+      width: 100%;
+      margin-bottom: 10px;
+      cursor: pointer;
+      @media screen and (min-width: 850px) {
+        max-width: 400px;
+        width: auto;
+        max-height: 185px;
+        margin: 0;
+        padding-left: 20px;
+      }
+    }
+    .button {
+      width: 100%;
+      border: 2px solid $blue;
+      border-radius: 5px;
+      background: white;
+      color: $blue;
+      padding: 15px;
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      @include transition(all 0.3s linear);
+      &:hover,
+      &:focus {
+        color: white;
+        background: $blue;
+        outline: 0;
+      }
     }
   }
   .card-data {
@@ -740,19 +781,29 @@ footer {
     line-height: 32px;
     width: 100%;
     @media screen and (min-width: 650px) {
-      width: 60%;
       font-size: 17px;
     }
     @media screen and (min-width: 850px) {
-      width: 250px;
+      @include flex-direction(row);
+      width: 800px;
+      padding: 5px;
     }
-    .country{
+    .country {
       font-style: italic;
     }
     .price {
       font-weight: bold;
       letter-spacing: 2px;
       padding: 25px 0;
+      @media screen and (min-width: 850px) {
+        padding: 0 0 0 25px;
+      }
+    }
+    .additional {
+      font-style: italic;
+      @media screen and (min-width: 850px) {
+        padding: 0 0 0 25px;
+      }
     }
   }
   .card-email {
@@ -776,6 +827,9 @@ footer {
       border-bottom-right-radius: 10px;
       border-top-right-radius: 0px;
       border-top-left-radius: 0px;
+    }
+    @media screen and (min-width: 850px) {
+
     }
   }
 }

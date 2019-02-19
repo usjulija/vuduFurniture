@@ -4,11 +4,20 @@ function responsiveNav() {
   topnav.className === "topnav" ? topnav.className += " responsive" : topnav.className = "topnav";
 }
 
+function formatPrice(cents) {
+  return (cents / 100).toLocaleString("FR", {
+    style: "currency",
+    currency: "EUR"
+  });
+}
+
 //product card generator
 const pageId = window.location.search;
 const pageNumber = pageId.replace(/\D/g,'');
 
 const productCard = document.getElementById("productCard");
+
+let bigImage;
 
 function createCard() {
   fetch('./data/products.json')
@@ -16,26 +25,35 @@ function createCard() {
     .then(data => {
      let cardData = data.filter(function(product) {
         return product.id == pageNumber;
-      });
+     });
+
+    bigImage = cardData["0"].imageBig;
+    const price = formatPrice(cardData["0"].price);
 
     const card = document.createElement("div");
     card.className = "cardContainer";
+
+    const additional = cardData["0"].additional ? cardData["0"].additional : "";
+
     card.innerHTML = `
       <h2>${cardData["0"].name}</h2>
-      <img id="myImg" src='${cardData["0"].image}' alt='${cardData["0"].name}' class="product-image-small">
-      <img src='${cardData["0"].scheme}' alt='${cardData["0"].name} scheme' class="product-scheme">
-      <div class="card-data">
-        <p>${cardData["0"].description}</p>
-        <p class="country">Kilmės šalis: ${cardData["0"].country}.</p>
-        <p class="price">${cardData["0"].price}</p>
+      <img id="mainImg" src='${cardData["0"].image}' alt='${cardData["0"].name}' class="product-image-small" title="padidinti">
+      <div class="product-scheme">
+        <img src='${cardData["0"].scheme}' alt='${cardData["0"].name} schema' class="additImg" title="padidinti">
+        <img src='${cardData["0"].color}' alt='${cardData["0"].name} spalvos' class="additImg" title="padidinti">
       </div>
-      <a href="mailto:email@email.com?Subject=Contact%20form"
-      target="_top"
-      class="card-email"
-      rel="noopener noreferrer">Siųsti el.laišką</a>
+      <div class="card-data">
+        <p class="country">Gamintojas: ${cardData["0"].country}.</p>
+        <p class="price">Kaina: ${price}</p>
+        <p class="additional">${additional}</p>
+      </div>
+      <a href="mailto:sales@vudufurniture.com?Subject=Del%20producto%20Nr:${cardData["0"].productNo}"
+        target="_top"
+        class="card-email but"
+        rel="noopener noreferrer">Siųsti el.laišką</a>
       <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01" src='${cardData["0"].imageBig}' alt='${cardData["0"].name}'>
+        <button class="close">&times;</button>
+        <img class="modal-content" id="img01" alt='${cardData["0"].name}'>
       </div>
         `;
     productCard.append(card);
@@ -43,16 +61,35 @@ function createCard() {
     .then(() => {
       //the modal
       const modal = document.getElementById('myModal');
-      const img = document.getElementById('myImg');
+      const mainImg = document.getElementById('mainImg');
       const modalImg = document.getElementById("img01");
       const span = document.getElementsByClassName("close")[0];
+      const allButtons = document.querySelectorAll(".but");
+      const additImg = document.querySelectorAll(".additImg");
 
-      img.onclick = function(){
+      mainImg.onclick = function(){
+        modalImg.src = bigImage;
         modal.style.display = "block";
+        allButtons.forEach(but => {
+          but.tabIndex = -1;
+        });
       }
+
+      additImg.forEach(img => {
+        img.onclick = function(){
+          modalImg.src = this.src;
+          modal.style.display = "block";
+          allButtons.forEach(but => {
+            but.tabIndex = -1;
+          });
+        }
+      });
 
       span.onclick = function() {
         modal.style.display = "none";
+        allButtons.forEach(but => {
+          but.tabIndex = 0;
+        });
       }
     })
     .catch((error) => {

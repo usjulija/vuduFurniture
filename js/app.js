@@ -1,3 +1,4 @@
+const gallerySection = document.getElementById("products");
 //responsive navigation menu
 function responsiveNav() {
   const topnav = document.getElementById("nav");
@@ -7,8 +8,14 @@ function responsiveNav() {
 //filter function for shop ref: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_portfolio_gallery_filter
 function filterSelection(c) {
   var x, i;
+  let message = document.querySelector(".message");
   x = document.getElementsByClassName("panel");
   if (c == "all") c = "";
+  if (c === "nature" || c === "scandinavian") {
+    message.innerHTML = "Informacija ruošiama";
+  } else {
+    message.innerHTML = "";
+  }
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
@@ -37,7 +44,6 @@ function w3RemoveClass(element, name) {
 }
 
 //shop generator
-const gallerySection = document.getElementById("products");
 
 function createShop() {
   fetch('./data/products.json')
@@ -45,12 +51,11 @@ function createShop() {
     .then(data => {
       data.forEach(product => {
         //creates image with link on the main page
-        const panel = document.createElement("div");
+        const panel = document.createElement("a");
         panel.className = `panel ${product.type}`;
+        panel.href = product.url;
         panel.style.backgroundImage = `url(${product.image})`;
-        panel.innerHTML = `
-          <a href='${product.url}' class="title">${product.name}</a>
-            `;
+        panel.innerHTML = "<p>Daugiau...</p>";
         gallerySection.append(panel);
       });
     })

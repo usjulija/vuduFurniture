@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="baldai, loft, interjeras, dizainas, komoda, veidrodis, staliukas">
+  <meta name="Description" content="Harmoningas interjeras apjungtiant keletą baldų.">
+  <meta name="author" content="Julija Us">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no">
   <link href="css/styles.css" rel="stylesheet">
@@ -14,14 +17,18 @@
   <nav class="topnav" id="nav">
     <div class="left-align">
       <img src="./images/vudu-logo-small.svg" alt="vudu furniture logo">
-      <a href="#home" id="active">VŪDU furniture</a>
+      <a href="#home" id="active" rel="noopener noreferrer">VŪDU baldai</a>
     </div>
     <div class="right-align">
-      <a href="#about">Apie mus</a>
-      <a href="#shop">Parduotuvė</a>
-      <a href="#contact">Kontaktai</a>
-      <a href="tel:+370" id="phone">+370 000 000</a>
-      <a href="javascript:void(0);" class="icon" onclick="responsiveNav()">
+      <a href="#about" rel="noopener noreferrer">Apie mus</a>
+      <a href="#shop" rel="noopener noreferrer">Parduotuvė</a>
+      <a href="#contact" rel="noopener noreferrer">Kontaktai</a>
+      <a href="tel:+37069877618" id="phone" rel="noopener noreferrer">+370 698 77618</a>
+      <a href="javascript:void(0);"
+         class="icon"
+         onclick="responsiveNav()"
+         aria-label="Open menu"
+         rel="noopener noreferrer">
         <div class="hamburger">
           <div class="bar1"></div>
           <div class="bar2"></div>
@@ -390,80 +397,89 @@
           </g>
         </g>
       </svg>
-      <h1>VŪDU furniture</h1>
-      <p>Interior that makes you feel</p>
+      <h1>VŪDU baldai</h1>
+      <p>Interjeras priverčiantis jausti</p>
 
-      <a href="#about" class="floatingArr">
-        <svg role="button" aria-label="link to about me section" xmlns="http://www.w3.org/2000/svg" tabindex="0" width="35" height="35" viewBox="0 0 129 129">
+      <a href="#shop" class="floatingArr">
+        <svg role="button" aria-label="link to about me section" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 129 129">
           <path fill="#3b3a50" d="M121 35c-1-2-4-2-6 0L66 86 13 35a4 4 0 0 0-5 5l54 54 2 1c1 1 3 0 3-1l54-54c2-1 2-4 0-5z"/>
         </svg>
       </a>
     </section>
+    <!-- SHOP SECTION -->
+    <section id="shop">
+        <h2>Parduotuvė</h2>
+        <div id="myBtnContainer">
+          <button class="btn" onclick="filterSelection('loft')">Loft</button>
+          <button class="btn" onclick="filterSelection('scandinavian')">Skandinaviški</button>
+          <button class="btn" onclick="filterSelection('nature')">Nature</button>
+          <button class="btn" onclick="filterSelection('decor')">Interjero detales</button>
+          <!-- <button class="btn active" onclick="filterSelection('all')">Visi</button> -->
+        </div>
+        <div><p class="message"></p></div>
+        <div id="products"></div>
+    </section>
     <!-- ABOUT US SECTION -->
     <section id="about">
       <h2>Apie mus</h2>
-      <p>Mes apjungiame aistrą grožiui ir kokybei, kuriant Jūsų namus. Kad erdvė, kuri Jus supa kasdien, būtų unikali ir įkvėpta gyvybės.
-        Susisiekite ir mes pateiksime Jums išbaigtą individualų pasiūlymą.</p>
-      </section>
-      <!-- SHOP SECTION -->
-      <section id="shop">
-        <h2>Parduotuvė</h2>
-        <div id="myBtnContainer">
-          <button class="btn active" onclick="filterSelection('all')">Visi</button>
-          <button class="btn" onclick="filterSelection('loft')">Loft</button>
-          <button class="btn" onclick="filterSelection('scandinavian')">Skandinaviškas</button>
-          <button class="btn" onclick="filterSelection('decor')">Decoras</button>
-        </div>
-        <div id="products"></div>
-        <div class="quote">
-          <p>The British John Ruskin – writer and aesthete, theorist of the Arts and Crafts Movement and precursor of the Art Nouveau – described fine art as “that in which the hand, the head, and the heart of man go together”.</p>
-        </div>
-      </section>
+      <ul>
+        <li>Formos ir struktūra, kuriančios šilto, erdvaus ir individualaus būsto pojūtį;</li>
+        <li>Natūralios medienos lukštas, gamyklinė nepriekaištinga gaminio kokybė;</li>
+        <li>Funkcionalumas ir talpumas, neaukojant stiliaus;</li>
+        <li>Harmoningas interjeras apjungtiant keletą baldų;</li>
+        <li>Komponavimo laisvė, galimybė keisti baldo dinamiką pasirenkant lukšto spalvą ir baldo pagrindą.</li>
+      </ul>
+      <div class="quote">
+        <p class="italic">Tikrajame mene rankos, galva ir žmogaus širdis eina kartu.</p>
+        <p>John Ruskin</p>
+      </div>
+    </section>
       <!-- CONTACTS -->
-      <section id="contact">
+    <section id="contact">
         <h2>Kontaktai</h2>
         <article>
           <div class="social">
             <h3>Bendraukime!</h3>
             <div>
               <a class="button"
-              href="https://facebook.com"
-              rel="noopener noreferrer"
-              target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 96.1 96.1">
-                <path fill="#3b3a50" d="M72 0H59.7c-14 0-23 9.3-23 23.7v10.9H24c-1 0-2 .8-2 2v15.7c0 1.1 1 2 2 2h12.6v39.9c0 1 .8 2 2 2h16.3c1 0 2-1 2-2v-40h14.6c1 0 2-.8 2-1.9V36.5a2 2 0 0 0-2-2H56.8v-9.2c0-4.4 1.1-6.7 6.9-6.7H72c1 0 2-.9 2-2V2c0-1.1-1-2-2-2z"/>
-              </svg>
-            </a>
-            <a сlass="button"
-            href="https://www.instagram.com"
-            rel="noopener noreferrer"
-            target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 169.1 169.1">
-              <path fill="#3b3a50" d="M122.4 0H46.7C20.9 0 0 21 0 46.7v75.7c0 25.7 21 46.7 46.7 46.7h75.7c25.7 0 46.7-21 46.7-46.7V46.7C169 20.9 148 0 122.4 0zm31.7 122.4a31.7 31.7 0 0 1-31.7 31.7H46.7A31.7 31.7 0 0 1 15 122.4V46.7A31.7 31.7 0 0 1 46.7 15h75.7a31.7 31.7 0 0 1 31.7 31.7v75.7z"/>
-              <path fill="#3b3a50" d="M84.5 41a43.6 43.6 0 1 0 .1 87.2 43.6 43.6 0 0 0 0-87.2zm0 72a28.6 28.6 0 1 1 0-57.1 28.6 28.6 0 0 1 0 57.2zM130 28.3a11 11 0 0 0-11 11 11 11 0 0 0 11 11 11 11 0 0 0 7.8-18.8 11 11 0 0 0-7.9-3.2z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <a href="mailto:email@email.com?Subject=Contact%20form"
-      target="_top"
-      class="emial-button"
-      rel="noopener noreferrer">Siųsti el.laišką</a>
-      <div class="address">
-        <p>+370 000 0000</p>
-        <p>email@email.com</p>
-      </div>
-    </article>
-  </section>
+                href="https://facebook.com"
+                rel="noopener noreferrer"
+                aria-label="Open Facebook page"
+                target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 96.1 96.1">
+                  <path class="icon-link" fill="#3b3a50" d="M72 0H59.7c-14 0-23 9.3-23 23.7v10.9H24c-1 0-2 .8-2 2v15.7c0 1.1 1 2 2 2h12.6v39.9c0 1 .8 2 2 2h16.3c1 0 2-1 2-2v-40h14.6c1 0 2-.8 2-1.9V36.5a2 2 0 0 0-2-2H56.8v-9.2c0-4.4 1.1-6.7 6.9-6.7H72c1 0 2-.9 2-2V2c0-1.1-1-2-2-2z"/>
+                </svg>
+              </a>
+              <a class="button"
+                href="https://www.instagram.com"
+                rel="noopener noreferrer"
+                aria-label="Open Instagram page"
+                target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 169.1 169.1">
+                  <path class="icon-link" fill="#3b3a50" d="M122.4 0H46.7C20.9 0 0 21 0 46.7v75.7c0 25.7 21 46.7 46.7 46.7h75.7c25.7 0 46.7-21 46.7-46.7V46.7C169 20.9 148 0 122.4 0zm31.7 122.4a31.7 31.7 0 0 1-31.7 31.7H46.7A31.7 31.7 0 0 1 15 122.4V46.7A31.7 31.7 0 0 1 46.7 15h75.7a31.7 31.7 0 0 1 31.7 31.7v75.7z"/>
+                  <path class="icon-link" fill="#3b3a50" d="M84.5 41a43.6 43.6 0 1 0 .1 87.2 43.6 43.6 0 0 0 0-87.2zm0 72a28.6 28.6 0 1 1 0-57.1 28.6 28.6 0 0 1 0 57.2zM130 28.3a11 11 0 0 0-11 11 11 11 0 0 0 11 11 11 11 0 0 0 7.8-18.8 11 11 0 0 0-7.9-3.2z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <a href="mailto:sales@vudufurniture.com?Subject=Pasiteiravimas"
+            target="_top"
+            class="emial-button"
+            rel="noopener noreferrer">Siųsti el.laišką</a>
+          <div class="address">
+            <p>+370 698 77618</p>
+            <p>sales@vudufurniture.com</p>
+          </div>
+        </article>
+    </section>
   </main>
   <!-- WELCOME SECTION -->
   <footer>
     <p>Copyright (c) 2019 designed by
-      <a target='_blank' href="https://www.julia-juls.com/">Julia Us</a>
+      <a target='_blank' href="https://www.julia-juls.com/" rel="noopener noreferrer">Julia Us</a>
     </p>
   </footer>
   <script src="js/app.js"></script>
-
   <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
   <script>
     var scroll = new SmoothScroll('a[href*="#"]');

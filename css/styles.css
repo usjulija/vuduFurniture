@@ -50,7 +50,7 @@ body {
   -ms-align-items: center;
   align-items: center; }
   .left-align img {
-    height: 85px; }
+    height: 75px; }
 
 .topnav a {
   text-align: center;
@@ -163,28 +163,18 @@ body {
         max-height: 60%; } }
   #home h1 {
     font-family: 'Comfortaa', cursive;
-    font-size: 30px;
+    font-size: 25px;
     margin: 20px 10px;
     letter-spacing: 3px;
     text-align: center; }
     @media screen and (min-width: 600px) {
       #home h1 {
-        font-size: 40px; } }
-    @media screen and (min-width: 850px) {
-      #home h1 {
-        font-size: 50px;
-        margin: 40px 10px 10px 10px; } }
+        font-size: 30px; } }
   #home p {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-align: center;
-    font-size: 15px; }
-    @media screen and (min-width: 600px) {
-      #home p {
-        font-size: 20px; } }
-    @media screen and (min-width: 850px) {
-      #home p {
-        font-size: 25px; } }
+    font-size: 17px; }
   #home a {
     margin: 5px;
     background: #d6d6d6;
@@ -210,8 +200,9 @@ body {
     -ms-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear; }
-    #home a:hover {
-      background-color: #e58c87; }
+    #home a:hover, #home a:focus {
+      background-color: #e58c87;
+      outline: 0; }
 
 .changeColor {
   animation-name: changeColor;
@@ -399,21 +390,21 @@ body {
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
-  flex-direction: column;
-  text-align: center; }
+  flex-direction: column; }
   #about h2 {
+    text-align: center;
     font-family: 'Comfortaa', cursive;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin: 25px; }
-    @media screen and (min-width: 850px) {
-      #about h2 {
-        margin: 55px 25px 25px 25px; } }
-  #about p {
+    margin: 65px 25px 25px 25px; }
+  #about ul {
     text-align: justify;
-    max-width: 550px;
-    font-size: 22px;
-    padding: 10px; }
+    max-width: 705px;
+    padding: 0 25px;
+    margin: 15px;
+    list-style-image: url(../images/checked.png); }
+    #about ul li {
+      margin: 5px; }
 
 #shop {
   text-align: center; }
@@ -455,51 +446,56 @@ body {
 #products > * {
   margin: 7.5px 15px; }
 
+.message {
+  margin-top: 25px; }
+
 .panel {
-  flex: 100%;
+  text-decoration: none;
+  opacity: 0.85;
+  color: #3b3a50;
   max-width: 250px;
-  height: 250px;
+  min-width: 250px;
+  height: 280px;
   display: none;
-  align-items: center;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  -ms-align-items: flex-end;
+  align-items: flex-end;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
   justify-content: center;
+  -ms-flex-pack: center;
   overflow: hidden;
-  background-position: center;
-  background-size: cover;
-  box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.1);
+  background-size: contain;
+  background-repeat: no-repeat;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   -ms-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
-  transition: all 0.3s linear; }
-  @media screen and (min-width: 450px) {
-    .panel {
-      flex: 40%; } }
+  transition: all 0.3s linear;
+  box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid white; }
+  .panel:hover, .panel:focus {
+    opacity: 1;
+    box-shadow: 4px 5px 3px rgba(0, 0, 0, 0.35);
+    color: #de4d44;
+    border: 1px solid #dedede;
+    outline: 0; }
   @media screen and (min-width: 700px) {
     .panel {
-      max-width: 300px;
-      height: 300px; } }
-  @media screen and (min-width: 900px) {
-    .panel {
-      flex: 20%; } }
-  .panel .title {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s;
-    z-index: 10;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    background: #3b3a50;
-    padding: 15px; }
-    .panel .title:hover, .panel .title:focus {
-      opacity: 1; }
+      min-width: 300px;
+      height: 330px; } }
 
 .show {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex; }
+
+.italic {
+  font-style: italic; }
 
 .btn {
   -webkit-transition: all 0.3s linear;
@@ -526,8 +522,8 @@ body {
   padding: 30px;
   line-height: 35px;
   text-align: justify;
-  max-width: 550px;
-  margin: 100px auto; }
+  max-width: 600px;
+  margin: 40px auto; }
 
 #contact {
   display: -webkit-box;
@@ -615,8 +611,18 @@ body {
     -ms-justify-content: center;
     justify-content: center;
     -ms-flex-pack: center; }
-    .social div a {
+    .social div .button {
       text-decoration: none; }
+      .social div .button .icon-link {
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        transition: all 0.3s linear; }
+      .social div .button:hover .icon-link,
+      .social div .button:focus .icon-link, .social div .button:focus {
+        fill: #de4d44;
+        outline: 0; }
 
 .emial-button {
   -webkit-transition: all 0.3s linear;
@@ -694,10 +700,11 @@ footer {
 .modal-content {
   margin: auto;
   display: block;
-  width: 100%; }
+  max-width: 100%;
+  max-height: 100%; }
   @media screen and (min-width: 900px) {
     .modal-content {
-      width: 80%; } }
+      max-width: 80%; } }
 
 .modal-content {
   -webkit-animation-name: zoom;
@@ -723,6 +730,8 @@ footer {
   top: 15px;
   right: 35px;
   color: #f1f1f1;
+  background: transparent;
+  border: 0;
   font-size: 40px;
   font-weight: bold;
   -webkit-transition: all 0.3s linear;
@@ -733,12 +742,14 @@ footer {
 
 .close:hover,
 .close:focus {
-  color: #bbb;
+  color: #de4d44;
   text-decoration: none;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: 0; }
 
 #productCard {
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
+  background: #f2f2f2;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -755,7 +766,7 @@ footer {
   -ms-flex-pack: center; }
   @media screen and (min-width: 450px) {
     #productCard {
-      background: #f2f2f2; } }
+      background: #dbdbdb; } }
 
 #myImg {
   cursor: pointer;
@@ -791,22 +802,17 @@ footer {
   -moz-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
-  max-width: 900px;
   width: 100%;
   margin: 120px auto 50px auto;
-  background: white; }
+  background: #f2f2f2; }
   @media screen and (min-width: 450px) {
     .cardContainer {
       border-radius: 10px;
       box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.1);
       width: 350px; } }
-  @media screen and (min-width: 650px) {
-    .cardContainer {
-      width: 450px; } }
   @media screen and (min-width: 850px) {
     .cardContainer {
-      width: 750px;
-      height: 383px; } }
+      width: 800px; } }
   .cardContainer h2 {
     width: 100%;
     flex: 100%;
@@ -815,24 +821,79 @@ footer {
     letter-spacing: 3px;
     text-transform: uppercase;
     margin: 20px; }
+    @media screen and (min-width: 850px) {
+      .cardContainer h2 {
+        font-size: 23px;
+        margin: 10px; } }
   .cardContainer .product-image-small {
     width: 100%;
-    margin-bottom: 30px; }
+    padding-bottom: 30px;
+    background: white;
+    cursor: pointer; }
     @media screen and (min-width: 850px) {
       .cardContainer .product-image-small {
-        margin-bottom: 0;
-        width: 300px; } }
+        padding-bottom: 0;
+        width: 400px; } }
   .cardContainer .product-scheme {
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 10px; }
+    background: white;
+    padding: 0 40px 20px 40px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
     @media screen and (min-width: 650px) {
       .cardContainer .product-scheme {
-        width: 40%; } }
+        padding: 0 70px 20px 70px; } }
     @media screen and (min-width: 850px) {
       .cardContainer .product-scheme {
-        padding-left: 20px;
-        width: 200px; } }
+        padding: 0 0 20px 0;
+        width: 400px;
+        height: 400px; } }
+    .cardContainer .product-scheme img {
+      width: 100%;
+      margin-bottom: 10px;
+      cursor: pointer; }
+      @media screen and (min-width: 850px) {
+        .cardContainer .product-scheme img {
+          max-width: 400px;
+          width: auto;
+          max-height: 185px;
+          margin: 0;
+          padding-left: 20px; } }
+    .cardContainer .product-scheme .button {
+      width: 100%;
+      border: 2px solid #3b3a50;
+      border-radius: 5px;
+      background: white;
+      color: #3b3a50;
+      padding: 15px;
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      -webkit-transition: all 0.3s linear;
+      -moz-transition: all 0.3s linear;
+      -ms-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear; }
+      .cardContainer .product-scheme .button:hover, .cardContainer .product-scheme .button:focus {
+        color: white;
+        background: #3b3a50;
+        outline: 0; }
   .cardContainer .card-data {
     display: -webkit-box;
     display: -moz-box;
@@ -858,17 +919,29 @@ footer {
     width: 100%; }
     @media screen and (min-width: 650px) {
       .cardContainer .card-data {
-        width: 60%;
         font-size: 17px; } }
     @media screen and (min-width: 850px) {
       .cardContainer .card-data {
-        width: 250px; } }
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        width: 800px;
+        padding: 5px; } }
     .cardContainer .card-data .country {
       font-style: italic; }
     .cardContainer .card-data .price {
       font-weight: bold;
       letter-spacing: 2px;
       padding: 25px 0; }
+      @media screen and (min-width: 850px) {
+        .cardContainer .card-data .price {
+          padding: 0 0 0 25px; } }
+    .cardContainer .card-data .additional {
+      font-style: italic; }
+      @media screen and (min-width: 850px) {
+        .cardContainer .card-data .additional {
+          padding: 0 0 0 25px; } }
   .cardContainer .card-email {
     width: 80%;
     text-align: center;
