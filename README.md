@@ -9,6 +9,7 @@ This is a furniture e-shop, allowing users to filter products by style.
 
 ## App preview
 [Online preview](https://usjulija.github.io/vuduFurniture/)
+![App preview](https://i.ibb.co/9NpRF4t/9.png) 
 
 ## Acknowledgments
 - [CSS animations](http://www.justinaguilar.com/animations/index.html#how)
