@@ -296,24 +296,27 @@
     "scheme": "./images/scheme/23scheme.jpg",
     "type": "loft",
     "name": "staliukas",
-    "price": 28000,
+    "price": 26000,
     "url": "./product.html?id={23}",
     "country": "KIARE, Ispanija",
     "description": "Aukštos kokybės ir išskirtinio dizaino komoda.",
-    "color": "./images/colors3.jpg"
+    "color": "./images/colors3.jpg",
+    "additional": "*su marmuro stalviršiu kaina: Piedra 280,00 €, Negro 320,00 €, Beige 450,00 €"
   }, {
     "id": "24",
     "productNo": "Natur-003022",
     "image": "./images/small/24.jpg",
     "imageBig": "./images/24bg.jpg",
-    "scheme": "./images/scheme/24scheme.jpg",
+    "scheme": "./images/scheme/23scheme.jpg",
     "type": "loft",
     "name": "staliukas",
     "price": 26000,
     "url": "./product.html?id={24}",
     "country": "KIARE, Ispanija",
     "description": "Aukštos kokybės ir išskirtinio dizaino komoda.",
-    "color": "./images/colors3.jpg"
+    "color": "./images/colors3.jpg",
+    "additional": "*su marmuro stalviršiu kaina: Piedra 280,00 €, Negro 320,00 €, Beige 450,00 €"
+
   }, {
     "id": "25",
     "productNo": "Natur-00535",
