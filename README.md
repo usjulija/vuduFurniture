@@ -8,8 +8,8 @@ This is a furniture e-shop, allowing users to filter products by style.
 * Different page-card is created dynamically for each product.
 
 ## App preview
-[Online preview](www.vudufurniture.com)
-![App preview](https://i.ibb.co/9NpRF4t/9.png)
+[Online preview](https://usjulija.github.io/vuduFurniture/)
+![App preview](https://i.ibb.co/9NpRF4t/9.png) 
 
 ## Acknowledgments
 - [CSS animations](http://www.justinaguilar.com/animations/index.html#how)

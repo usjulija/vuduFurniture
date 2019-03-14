@@ -56,14 +56,17 @@ function createCard() {
         <img src='${cardData["0"].color}' alt='${cardData["0"].name} spalvos' class="additImg" title="padidinti">
       </div>
       <div class="card-data">
-        <p class="country">Gamintojas: ${cardData["0"].country}.</p>
+        <div class="country">
+          <p>Gamintojas: ${cardData["0"].country}.</p>
+          <p>Pristatymo laikas: 3 sav.</p>
+        </div>
         <p class="price">Kaina: ${price}</p>
         <p class="additional">${additional}</p>
       </div>
       <a href="mailto:sales@vudufurniture.com?Subject=Del%20producto%20Nr:${cardData["0"].productNo}"
         target="_top"
         class="card-email but"
-        rel="noopener noreferrer">Siųsti el.laišką</a>
+        rel="noopener noreferrer">Užsakyti</a>
       <div id="myModal" class="modal">
         <button class="close">&times;</button>
         <img class="modal-content" id="img01" alt='${cardData["0"].name}'>

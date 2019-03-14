@@ -17,54 +17,43 @@ body {
   color: $blue;
 }
 
+a {
+  text-decoration: none;
+}
+
 //navigation
 .topnav {
   padding: 10px 15px;
-  background-color: white;
-  @include flexbox;
-  flex: 20% auto;
+  background-color: transparent;
   width: 100%;
   position: fixed;
   z-index: 15;
 }
 
 .right-align {
+  margin-top: -10px;
+  padding: 10px;
   width: 100%;
   @include flexbox;
   @include justify-content(flex-end);
   @include align-items(center);
 }
 
-.left-align {
-  @include flexbox;
-  @include align-items(center);
-  img {
-    height: 75px;
-  }
+.right-align section:not(:last-child) {
+  display: none;
 }
 
-.topnav a {
+.content-menu a {
   text-align: center;
-  padding: 10px 15px;
   text-decoration: none;
+  padding: 10px 15px;
   color: $blue;
   font-family: 'Comfortaa', cursive;
   @include transition(all 0.3s linear);
 }
 
-.topnav a:hover {
-  color: grey;
-}
-
-#active {
+.content-menu a:hover {
   color: $red;
-  font-weight: bold;
-  font-size: 25px;
-  text-align: left;
-  max-width: 153px;
-  &:hover {
-    color: brown;
-  }
 }
 
 #phone {
@@ -76,12 +65,62 @@ body {
   }
 }
 
-.topnav .icon {
-  display: none;
+#cart {
+  padding: 0;
+  span {
+    position: relative;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    top: -39px;
+    right: -18px;
+    background: $blue;
+    color: white;
+    width: 19px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    @include transition(all 0.3s linear);
+  }
+}
+
+#cart svg path {
+  @include transition(all 0.3s linear);
+}
+
+#cart:hover path {
+  fill: $red;
+}
+
+#cart:hover span {
+  background: $red;
+}
+
+.topnav .mini-menu {
+  background: #ffcfcc;
+  height: 49px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  @include flexbox;
 }
 
 .hamburger {
   display: inline-block;
+  margin-left: 25px;
+}
+
+.icon:hover .bar1,
+.icon:hover .bar2,
+.icon:hover .bar3 {
+  background-color: $red;
+}
+
+.icon:focus .bar1,
+.icon:focus .bar2,
+.icon:focus .bar3 {
+  outline: 0;
+  background-color: $red;
 }
 
 .bar1, .bar2, .bar3 {
@@ -89,40 +128,40 @@ body {
   height: 3px;
   background-color: $blue;
   margin: 5px 0;
-  transition: 0.4s;
+  @include transition(all 0.3s linear);
 }
 
-@media screen and (max-width: 850px) {
-  .right-align a:not(:last-child) {
-    display: none;
-  }
-  .topnav a.icon {
-    display: block;
-  }
-  .topnav.responsive {position: fixed;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive {
-    @include flex-direction(column);
-  }
-  .topnav.responsive .right-align a:not(:last-child) {
-    display: block;
-  }
+.topnav.responsive {
+  position: fixed;
+  background: white;
+}
+.topnav.responsive .icon {
+  background: white;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
 
-  .topnav.responsive .right-align {
-    @include flex-direction(column);
-    .hamburger .bar1 {
-      @include transform(rotate(-45deg) translate(-5px, 6px));
-    }
-    .hamburger .bar2 {
-      opacity: 0;
-    }
-    .hamburger .bar3 {
-      @include transform(rotate(45deg) translate(-4px, -8px));
-    }
+.topnav.responsive .mini-menu {
+  margin-top: 10px;
+  background: white;
+}
+
+.topnav.responsive .right-align section:not(:last-child) {
+  @include flexbox;
+  @include flex-direction(column);
+}
+
+.topnav.responsive .right-align {
+  @include flex-direction(column);
+  .hamburger .bar1 {
+    @include transform(rotate(-45deg) translate(-5px, 6px));
+  }
+  .hamburger .bar2 {
+    opacity: 0;
+  }
+  .hamburger .bar3 {
+    @include transform(rotate(45deg) translate(-4px, -7px));
   }
 }
 
@@ -135,10 +174,13 @@ body {
   @include justify-content(center);
   @include flex-direction(column);
   .svg-mask {
-    max-height: 75%;
-    margin-top: 120px;
+    max-height: 85%;
+    margin-top: 0px;
     @media screen and (min-width: 600px) {
       max-height: 60%;
+    }
+    @media screen and (min-width: 850px) {
+      margin-top: 120px;
     }
   }
   h1 {
@@ -426,7 +468,7 @@ body {
 
 .panel {
   text-decoration: none;
-  opacity: 0.85;
+  opacity: 1;
   color: $blue;
   max-width: 250px;
   min-width: 250px;
@@ -803,6 +845,7 @@ footer {
       font-style: italic;
       @media screen and (min-width: 850px) {
         padding: 0 0 0 25px;
+        max-width: 400px;
       }
     }
   }
